@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "CP2",
-    "slug": "CP2",
+    "name": "myApp",
+    "slug": "myApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
