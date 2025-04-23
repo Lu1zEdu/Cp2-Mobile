@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import {
-    View, Text, TextInput, StyleSheet, TouchableOpacity, Alert, ScrollView
-} from 'react-native';
+import {View, Text, TextInput, StyleSheet, TouchableOpacity, Alert, ScrollView} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function FormScreen() {
+    const navigation = useNavigation();
     const [nomeLocal, setNomeLocal] = useState('');
     const [tipoLixo, setTipoLixo] = useState('');
     const [cep, setCep] = useState('');
@@ -55,8 +57,7 @@ export default function FormScreen() {
             await AsyncStorage.setItem('@pontos_coleta', JSON.stringify(lista));
 
             Alert.alert('Salvo!', 'Seu ponto de coleta foi salvo localmente.');
-
-            // Limpar os campos
+            
             setNomeLocal('');
             setTipoLixo('');
             setCep('');
@@ -70,6 +71,9 @@ export default function FormScreen() {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
+            <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={styles.iconBack}>
+                <Icon name="arrow-left" size={28} color={ '#2e7d32'} />
+            </TouchableOpacity>
             <Text style={styles.title}>Indique um ponto de descarte</Text>
 
             <TextInput
@@ -116,10 +120,13 @@ export default function FormScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 20,
-        backgroundColor: '#F2F4F6',
-        flexGrow: 1,
-        justifyContent: 'center'
+        flex: 1,
+        backgroundColor:'#f9f9f9',
+        padding: 20
+    },
+    iconBack: {
+        alignSelf: 'flex-start',
+        marginBottom: 10
     },
     title: {
         fontSize: 22,
