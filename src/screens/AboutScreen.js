@@ -25,7 +25,7 @@ export default function AboutScreen() {
 
       <View style={styles.card}>
         <View style={styles.personImg}>
-          <Image source={require('../../assets/erick-img.png')} style={styles.image}/>
+          <Image source={require('../../assets/luiz-img.png')} style={styles.image}/>
         </View>
         <View style={styles.personInfo}>
           <Text style={styles.name}>Luiz Eduardo</Text>

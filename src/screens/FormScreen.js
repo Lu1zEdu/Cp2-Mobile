@@ -36,8 +36,13 @@ export default function FormScreen() {
 
     const handleSubmit = async () => {
         if (!nomeLocal || !tipoLixo || !cep) {
+            if(cep.length <= 7){
+                Alert.alert('Cep invalido')
+            }
             Alert.alert('Campos obrigatórios', 'Preencha todos os campos obrigatórios.');
             return;
+        }else{
+            Alert.alert('Foi')
         }
 
         const novoRegistro = {
