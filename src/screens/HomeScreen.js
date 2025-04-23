@@ -1,10 +1,8 @@
 import React from 'react';
-import {View,Text,StyleSheet,Image,TouchableOpacity,Linking,useColorScheme} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {View,Text,StyleSheet,TouchableOpacity,Linking} from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
-export default function HomeScreen({navigation}) {
-  const colorScheme = useColorScheme();
-  const darkMode = colorScheme === 'dark';
+export default function HomeScreen() {
 
   const abrirSite = async () => {
     const url = 'https://www.gov.br/mma/pt-br';
@@ -16,60 +14,27 @@ export default function HomeScreen({navigation}) {
     }
   };
 
-  const styles = getStyles(darkMode);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo ao Recicla+ 🌱</Text>
+      <Text style={styles.title}>Bem-vindo ao Recicla +</Text>
       <Text style={styles.subtitle}>Ajude a transformar o mundo com pequenas atitudes!</Text>
 
+      <Text>Caso queira saber algo mais a fundo, Clique no botão abaixo {<Feather name='arrow-down' size={20}/>}</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('stackForm')}
+          onPress={() => Linking.openURL("https://www.gov.br/mma/pt-br")}
         >
-          <Icon name="edit" size={20} color="#fff" />
-          <Text style={styles.buttonText}>  Preencher Formulário</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('InfoScreen')}
-        >
-          <Icon name="info" size={20} color="#fff" />
-          <Text style={styles.buttonText}>  Informações</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={abrirSite}
-        >
-          <Icon name="public" size={20} color="#fff" />
-          <Text style={styles.buttonText}>  Visitar Site Ambiental</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate('AboutScreen')}
-        >
-            <Icon name="person" size={20} color="#fff"/>
-            <Text style={styles.buttonText}> Sobre Nós</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate('LocationScreen')}
-        >
-            <Icon name="location-on" size={20} color="#fff"/>
-            <Text style={styles.buttonText}>Locais Cadastrados</Text>
+          <Feather name='chrome' size={20} color="white"/>
+          <Text style={styles.buttonText}>  Visitar Site</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 }
 
-const getStyles = (darkMode) =>
-  StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
       padding: 20,
       backgroundColor:'#f5f5f5',

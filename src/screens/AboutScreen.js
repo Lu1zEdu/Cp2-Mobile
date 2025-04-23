@@ -21,6 +21,8 @@ export default function AboutScreen() {
 
       <Text style={styles.title}>Sobre os Desenvolvedores</Text>
 
+      <Text style={{padding:20}}>Esse é um projeto feito para a matéria de Mobile da turma 2TDSPM de 2025.</Text>
+
       <View style={styles.card}>
         <View style={styles.personImg}>
           <Image source={require('../../assets/erick-img.png')} style={styles.image}/>

@@ -10,12 +10,12 @@ const Stack = createNativeStackNavigator()
 export default function StackRoutes() {
 
     return (
-        <Stack.Navigator screenOptions={{ headerShown: true }}>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="stackLocation" component={Location}/>
             <Stack.Screen name="stackAbout" component={About} />
             <Stack.Screen name="stackForm" component={Form}/>
             <Stack.Screen name="stackHome" component={Home} />
             <Stack.Screen name='stackInfo' component={Info} />
-            <Stack.Screen name="stackLocation" component={Location}/>
         </Stack.Navigator>
     )
 }
