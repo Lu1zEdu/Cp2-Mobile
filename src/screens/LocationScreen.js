@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 
 export default function LocationScreen() {
     const navigation = useNavigation();
-    const colorScheme = useColorScheme();
 
     const locais = [
         { id: '1', nome: 'EcoPonto Central', endereco: 'Rua das Flores, 123 - Centro', observacao: 'Ponto de coleta de materiais recicláveis.' },
@@ -20,7 +19,7 @@ export default function LocationScreen() {
             <View>
                 <Text style={styles.nome}>{item.nome}</Text>
                 <Text style={styles.endereco}>{item.endereco}</Text>
-                <Text style={styles.observacao}>{item.observacao}</Text> {/* Exibindo a observação */}
+                <Text style={styles.observacao}>{item.observacao}</Text>
             </View>
         </View>
     );

@@ -1,10 +1,8 @@
 import React from 'react';
-import {View,Text,StyleSheet,Image,TouchableOpacity,ScrollView,Linking,useColorScheme} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {View,Text,StyleSheet,Image,TouchableOpacity,Linking,useColorScheme} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export default function HomeScreen() {
-  const navigation = useNavigation();
+export default function HomeScreen({navigation}) {
   const colorScheme = useColorScheme();
   const darkMode = colorScheme === 'dark';
 
@@ -21,18 +19,14 @@ export default function HomeScreen() {
   const styles = getStyles(darkMode);
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.title}>Bem-vindo ao Recicla+ 🌱</Text>
       <Text style={styles.subtitle}>Ajude a transformar o mundo com pequenas atitudes!</Text>
-
-
-      {/*<Image source={require('../assets/recicla.jpg')} style={styles.image} />
-      <Image source={require('../assets/recicla.jpg')} style={styles.image} />*/}
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('FormScreen')}
+          onPress={() => navigation.navigate('stackForm')}
         >
           <Icon name="edit" size={20} color="#fff" />
           <Text style={styles.buttonText}>  Preencher Formulário</Text>
@@ -70,7 +64,7 @@ export default function HomeScreen() {
             <Text style={styles.buttonText}>Locais Cadastrados</Text>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+    </View>
   );
 }
 

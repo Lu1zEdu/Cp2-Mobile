@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,StyleSheet,ScrollView,TouchableOpacity,Linking,useColorScheme, Image} from 'react-native';
+import {View,Text,StyleSheet,ScrollView,TouchableOpacity,Linking, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -17,7 +17,7 @@ export default function AboutScreen() {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={styles.iconBack}>
           <Icon name="arrow-left" size={28} color={ '#2e7d32'} />
       </TouchableOpacity>
@@ -26,7 +26,7 @@ export default function AboutScreen() {
 
       <View style={styles.card}>
         <View style={styles.personImg}>
-          <Image source={require('../assets/img-teste.png')} style={styles.image}/>
+          <Image source={require('../../assets/erick-img.png')} style={styles.image}/>
         </View>
         <View style={styles.personInfo}>
           <Text style={styles.name}>Luiz Eduardo</Text>
@@ -48,7 +48,7 @@ export default function AboutScreen() {
 
       <View style={styles.card}>
         <View style={styles.personImg}>
-          <Image source={require('../assets/img-teste.png')} style={styles.image}/>
+          <Image source={require('../../assets/erick-img.png')} style={styles.image}/>
         </View>
         <View style={styles.personInfo}>
 
@@ -66,7 +66,7 @@ export default function AboutScreen() {
           </View>
         </View>
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
@@ -102,10 +102,9 @@ const styles = StyleSheet.create({
       elevation: 4,
     },
     image: {
-      width: 50,
-      height: 70,
-      borderRadius: 10,
-      marginBottom: 15,
+      width: 70,
+      height: 100,
+      borderRadius: 5,
     },
     name: {
       fontSize: 20,

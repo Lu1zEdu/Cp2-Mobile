@@ -18,7 +18,7 @@ export default function InfoScreen() {
     };
 
     return (
-        <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.container}>
             <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={styles.iconBack}>
                 <Icon name="arrow-left" size={28} color={ '#2e7d32'} />
             </TouchableOpacity>
@@ -63,7 +63,7 @@ export default function InfoScreen() {
                 <Icon name="web" size={20} color="#fff" />
                 <Text style={styles.buttonText}>  Saiba mais sobre reciclagem</Text>
             </TouchableOpacity>
-        </ScrollView>
+        </View>
     );
 }
 
