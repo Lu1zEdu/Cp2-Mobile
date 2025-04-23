@@ -18,9 +18,6 @@ export default function AboutScreen() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={styles.iconBack}>
-          <Icon name="arrow-left" size={28} color={ '#2e7d32'} />
-      </TouchableOpacity>
 
       <Text style={styles.title}>Sobre os Desenvolvedores</Text>
 

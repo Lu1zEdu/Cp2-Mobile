@@ -71,9 +71,6 @@ export default function FormScreen() {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={styles.iconBack}>
-                <Icon name="arrow-left" size={28} color={ '#2e7d32'} />
-            </TouchableOpacity>
             <Text style={styles.title}>Indique um ponto de descarte</Text>
 
             <TextInput

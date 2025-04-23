@@ -19,10 +19,6 @@ export default function InfoScreen() {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={styles.iconBack}>
-                <Icon name="arrow-left" size={28} color={ '#2e7d32'} />
-            </TouchableOpacity>
-
             <Text style={styles.title}>🌎 Por que Reciclar?</Text>
             <Text style={styles.text}>
                 <Icon name="recycle" size={22} color={'#2e7d32'} /> A reciclagem ajuda a preservar o meio ambiente, reduz a poluição e ainda gera empregos.

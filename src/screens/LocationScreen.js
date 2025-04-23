@@ -26,9 +26,6 @@ export default function LocationScreen() {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.voltar}>
-                <Icon name="arrow-left" size={20} color={'#2e7d32'} />
-            </TouchableOpacity>
 
             <Text style={styles.titulo}>Locais Cadastrados</Text>
             <FlatList
