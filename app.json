@@ -3,12 +3,12 @@
     "name": "myApp",
     "slug": "myApp",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "orientation": "default",
+    "icon": "./assets/recycling.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/recycling.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,10 +19,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.m3rl1m.myApp"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/recycling.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bf455332-cd83-4ba2-914e-2ffe5b3449a2"
+      }
     }
   }
 }
